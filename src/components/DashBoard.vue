@@ -27,7 +27,12 @@
                     <td>{{ cliente.email }}</td>
                     <td>{{ cliente.datacadastro }}</td>
                     <td>
-                        <button class="button is-warning mr-2">Editar</button>
+                        <button class="button is-success mx-2" @click="editarCliente(cliente.id)">
+                            Editar
+                        </button>
+                        <!-- <RouterLink :to="{ path: `/clientesedit/${cliente.id}/` }" class="btn btn-sucess mx-2">
+                            Editar
+                        </RouterLink> -->
                         <button class="button is-danger" @click="excluirCliente(cliente.id)">Excluir</button>
                     </td>
                 </tr>
@@ -73,6 +78,11 @@
                     console.error("Não foi possível obter a lista de clientes!");
                 }
                 
+            },
+
+            editarCliente(id) {
+                // Navegue para a rota de edição manualmente
+                this.$router.push(`/clientesedit/${id}`);
             },
 
             async excluirCliente(id) {

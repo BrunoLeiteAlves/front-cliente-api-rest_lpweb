@@ -12,6 +12,11 @@ const routes = [
         name: 'ShowClientes',
 
         component: () => import('../views/Clientes.vue')
+    },
+    {
+      path: '/clientesedit/:id', // Adicione um parâmetro dinâmico ':id'
+      name: 'EditClientes',
+      component: () => import('../components/ClienteFormEdit.vue') // Use o componente ClienteFormEdit para edição
     }
 ]
 

@@ -12,6 +12,7 @@
         components: {
             DashBoard
         }
+        
     }
 </script>
 
