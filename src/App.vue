@@ -1,23 +1,31 @@
 <template>
   <div>
-    <NavBar :logo="logo_src" :alt="app_name"/>
+    <NavBar v-if="!isLoginPage" :logo="logo_src" :alt="app_name"/>
     <router-view />
+    <DevFooter v-if="!isLoginPage" />
   </div>
 </template>
 
 <script>
 import NavBar from './components/NavBar.vue';
+import DevFooter from './components/DevFooter.vue';
 export default {
   components: {
-    NavBar
+    NavBar,
+    DevFooter
   },
   data() {
     return {
       logo_src: '/img/logo.png',
       app_name: "API REST Clientes"
+    };
+  },
+  computed: {
+    isLoginPage() {
+      return this.$route.name === 'ShowLogin';
     }
   }
-}
+};
 </script>
 
 <style scoped>

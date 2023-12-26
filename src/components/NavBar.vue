@@ -5,8 +5,9 @@
             <img :src="logo" :alt="alt" id="logo">
         </router-link>
         <h1 class="title">Api Rest Clientes</h1>
-        <router-link to="/">Cadastrar Clientes</router-link>
+        <router-link to="/home">Cadastrar Clientes</router-link>
         <router-link to="/clientes">Listar Clientes</router-link>
+        <router-link to="/">Sair</router-link>
     </div>
 
 </template>

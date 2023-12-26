@@ -5,7 +5,8 @@
         <!-- <h2 class="title">Cadastro de Clientes</h2> -->
         <div class="box">
             <h2>Editando Cliente </h2>
-            <form id="cliente-form" @submit.prevent="editarCliente">
+            <!-- <form id="cliente-form" @submit.prevent="editarCliente"> -->
+            <form id="cliente-form" @submit.prevent="editarClienteConfirmation">
 
                 <div class="columns">
                     <div class="field column is-3">
@@ -98,6 +99,12 @@
         }
     },
     methods: {
+        async editarClienteConfirmation() {
+            const shouldEdit = window.confirm("Você tem certeza que deseja editar este cliente?");
+                if (shouldEdit) {
+                    await this.editarCliente();
+                }
+        },
         async editarCliente() {
                 // Verifica se o id do cliente está presente
                 if (!this.id) {

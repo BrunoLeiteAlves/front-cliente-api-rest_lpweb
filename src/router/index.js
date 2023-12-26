@@ -3,7 +3,7 @@ import HomePage from '../views/HomePage.vue'
 
 const routes = [
     {
-        path: '/',
+        path: '/home',
         name: 'HomePage',
         component: HomePage
     },
@@ -14,9 +14,15 @@ const routes = [
         component: () => import('../views/Clientes.vue')
     },
     {
-      path: '/clientesedit/:id', // Adicione um parâmetro dinâmico ':id'
+      path: '/clientesedit/:id', // parâmetro dinâmico ':id'
       name: 'EditClientes',
-      component: () => import('../components/ClienteFormEdit.vue') // Use o componente ClienteFormEdit para edição
+      component: () => import('../components/ClienteFormEdit.vue')
+    },
+    {
+        path: '/',
+        name: 'ShowLogin',
+
+        component: () => import('../views/LoginPage.vue')
     }
 ]
 

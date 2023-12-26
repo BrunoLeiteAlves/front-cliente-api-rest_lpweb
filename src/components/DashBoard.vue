@@ -33,7 +33,10 @@
                         <!-- <RouterLink :to="{ path: `/clientesedit/${cliente.id}/` }" class="btn btn-sucess mx-2">
                             Editar
                         </RouterLink> -->
-                        <button class="button is-danger" @click="excluirCliente(cliente.id)">Excluir</button>
+                        <!-- <button class="button is-danger" @click="excluirCliente(cliente.id)">Excluir</button> -->
+                        <button class="button is-danger" @click="excluirClienteConfirmation(cliente.id)">
+                            Excluir
+                        </button>
                     </td>
                 </tr>
             </tbody>
@@ -83,6 +86,13 @@
             editarCliente(id) {
                 // Navegue para a rota de edição manualmente
                 this.$router.push(`/clientesedit/${id}`);
+            },
+
+            async excluirClienteConfirmation(id) {
+                const shouldDelete = window.confirm("Você tem certeza que deseja excluir o cliente atual?");
+                if (shouldDelete) {
+                    this.excluirCliente(id);
+                }
             },
 
             async excluirCliente(id) {

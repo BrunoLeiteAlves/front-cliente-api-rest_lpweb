@@ -1,7 +1,6 @@
 <template>
     <div>        
         <ClienteForm />
-        <EditClientes />
     </div>
 </template>
 
